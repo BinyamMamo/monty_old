@@ -4,6 +4,7 @@
 
 void pall(void);
 void push(int data);
+void pint(void);
 
 stack_t *pos = NULL;
 int main(void)
@@ -11,9 +12,11 @@ int main(void)
 	// printf("hello ");
 	push(5);
 	push(3);
+	pint();
 	push(4);
 	push(2);
 	pall();
+	pint();
 	return (0);
 }
 
@@ -65,4 +68,14 @@ void push(int data)
 			pos = temp;
 		}
 	}
+}
+
+void pint(void)
+{
+	if (pos == NULL)
+	{
+		fprintf(stderr, "L<line_number>: can't pint, stack empty");
+		exit(EXIT_FAILURE);
+	}
+	printf("pint = %d\n", pos->n);
 }
