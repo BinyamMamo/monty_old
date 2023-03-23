@@ -1,6 +1,6 @@
 #include "monty.h"
 
-int len(stack_t *ptr)
+int mlen(stack_t *ptr)
 {
 	int i = 0;
 
